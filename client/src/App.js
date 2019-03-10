@@ -3,12 +3,12 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 // Components
-import AddBook from './components/AddBook';
-import BookLists from './components/BookLists';
+import AddWord from './components/AddWord';
+import WordLists from './components/WordLists';
 
 // Apollo client setup.
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'http://localhost:4000/api'
 });
 
 class App extends Component {
@@ -16,10 +16,9 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div className="main">
-          <h1>Reading Lists</h1>
-          <BookLists />
-          <hr />
-          <AddBook />
+          <h1>My Vocabulary Lists</h1>
+          <AddWord />
+          <WordLists />
         </div>
       </ApolloProvider>
     );
