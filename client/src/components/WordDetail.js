@@ -17,7 +17,7 @@ class WordDetail extends Component {
 
   submitForm(event) {
     event.preventDefault();
-    this.props.updateWordMutation({
+    this.props.updateWord({
       variables: {
         name: this.state.name,
         meaning:this.state.meaning,
@@ -70,5 +70,5 @@ export default compose(
       }
     }
   }),
-  graphql(updateWordMutation, { name: "updateWordMutation"})
+  graphql(updateWordMutation, { name: "updateWord"})
 )(WordDetail);
